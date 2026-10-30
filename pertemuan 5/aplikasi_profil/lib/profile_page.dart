@@ -12,19 +12,24 @@ class ProfilePage extends StatelessWidget {
         backgroundColor: Colors.blueAccent,
         foregroundColor: Colors.white,
       ),
-      body: const Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ProfileAvatar(),
-            SizedBox(height: 20),
-            ProfileInfo(
-              name: 'Hanif Iqbal Bagastyo',
-              role: 'Informatika - Software Engineering (TI 24M SE)',
-            ),
-            SizedBox(height: 32),
-            ProfileButton(),
-          ],
+      body: const SingleChildScrollView(
+        padding: EdgeInsets.all(16.0),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ProfileAvatar(),
+              SizedBox(height: 20),
+              ProfileInfo(
+                name: 'Hanif Iqbal Bagastyo',
+                role: 'Informatika - Software Engineering (TI 24M SE)',
+              ),
+              SizedBox(height: 24),
+              ProfileButton(),
+              SizedBox(height: 24),
+              ProfileStats(),
+            ],
+          ),
         ),
       ),
     );
@@ -89,6 +94,64 @@ class ProfileButton extends StatelessWidget {
       onPressed: () {},
       icon: const Icon(Icons.edit),
       label: const Text('Edit Profil'),
+    );
+  }
+}
+
+class ProfileStats extends StatelessWidget {
+  const ProfileStats({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
+      decoration: BoxDecoration(
+        color: Colors.blue[50],
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: const Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          StatItem(count: '15', label: 'Proyek'),
+          StatItem(count: '1.2K', label: 'Followers'),
+          StatItem(count: '42', label: 'Following'),
+        ],
+      ),
+    );
+  }
+}
+
+class StatItem extends StatelessWidget {
+  final String count;
+  final String label;
+
+  const StatItem({
+    super.key,
+    required this.count,
+    required this.label,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Text(
+          count,
+          style: const TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: Colors.blueAccent,
+          ),
+        ),
+        const SizedBox(height: 4),
+        Text(
+          label,
+          style: TextStyle(
+            fontSize: 14,
+            color: Colors.grey[600],
+          ),
+        ),
+      ],
     );
   }
 }
