@@ -112,7 +112,14 @@ class ProfileButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton.icon(
-      onPressed: () {},
+      onPressed: () {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Fitur edit belum aktif pada modul statis.'),
+            duration: Duration(seconds: 2),
+          ),
+        );
+      },
       icon: const Icon(Icons.edit),
       label: const Text('Edit Profil'),
     );
@@ -192,12 +199,8 @@ class ExperienceCard extends StatelessWidget {
       margin: const EdgeInsets.symmetric(vertical: 6),
       child: ListTile(
         leading: const Icon(Icons.work, color: Colors.blueAccent),
-        title: Text(experiencesTitleParam(experienceTitle)),
+        title: Text(experienceTitle),
       ),
     );
-  }
-
-  String experiencesTitleParam(String title) {
-    return title;
   }
 }
