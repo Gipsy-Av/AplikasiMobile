@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "694589106505",
+    "project_id": "flutter-project-10e2f",
+    "storage_bucket": "flutter-project-10e2f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:694589106505:android:75d1cc329d131f0db3d298",
+        "android_client_info": {
+          "package_name": "com.example.latihan_firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwklYh1OIZDf4oBG8rhOAp598h_T7jwSg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
